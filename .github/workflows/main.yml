@@ -34,7 +34,7 @@ jobs:
   deploy_to_test:
     name: Deploy to Test
     runs-on: ubuntu-latest
-    needs: [deploy_to_dev]
+    needs: [build_front, build_backend]
     environment: Test  # Specifies the environment with protection rules
     steps:
       - name: Run task 1

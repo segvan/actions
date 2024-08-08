@@ -19,6 +19,12 @@ jobs:
     steps:
       - name: Run task 1
         run: echo Run task 1
+      - name: Azure PowerShell Action
+        uses: Azure/powershell@v2
+        with:
+          # Specify the Az PowerShell script here.
+          inlineScript: echo PS task
+          azPSVersion: latest
 
   deploy_to_dev:
     name: Deploy to Dev
@@ -41,3 +47,4 @@ jobs:
         run: echo Deploying to Test...
       - name: Run task 2
         run: echo Deployment complete
+        
